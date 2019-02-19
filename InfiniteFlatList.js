@@ -18,7 +18,8 @@ class InfiniteFlatList extends React.Component {
       renderItem,
       keyExtractor,
       removeClippedSubviews,
-      onEndReachedThreshold
+      onEndReachedThreshold,
+      ...props
     } = this.props;
 
     if (!data.length && loading) {
@@ -38,6 +39,7 @@ class InfiniteFlatList extends React.Component {
                 removeClippedSubviews={removeClippedSubviews}
                 ListEmptyComponent={<ListEmpty text={emptyListText} />}
                 ListFooterComponent={<ListFooter loading={loading} />}
+                {...props}
       />
     );
   }
