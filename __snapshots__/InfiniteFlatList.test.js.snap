@@ -92,3 +92,108 @@ exports[`InfiniteFlatList renders correctly 1`] = `
   </View>
 </RCTScrollView>
 `;
+
+exports[`Props are being transferred and consumed 1`] = `
+<RCTScrollView
+  ListEmptyComponent={
+    <ListEmpty
+      containerStyle={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "justifyContent": "center",
+          "padding": 20,
+        }
+      }
+      text="No data"
+      textStyle={
+        Object {
+          "color": "#AAA",
+          "fontSize": 16,
+        }
+      }
+    />
+  }
+  ListFooterComponent={
+    <ListFooter
+      containerStyle={
+        Object {
+          "borderColor": "#CCC",
+          "paddingVertical": 20,
+        }
+      }
+      loading={false}
+      size="large"
+    />
+  }
+  data={
+    Array [
+      Object {
+        "id": "123",
+        "name": "Test",
+      },
+    ]
+  }
+  disableVirtualization={false}
+  getItem={[Function]}
+  getItemCount={[Function]}
+  horizontal={false}
+  initialNumToRender={10}
+  keyExtractor={[Function]}
+  maxToRenderPerBatch={10}
+  numColumns={4}
+  onContentSizeChange={[Function]}
+  onEndReached={[Function]}
+  onEndReachedThreshold={0.75}
+  onLayout={[Function]}
+  onMomentumScrollEnd={[Function]}
+  onRefresh={[Function]}
+  onScroll={[Function]}
+  onScrollBeginDrag={[Function]}
+  onScrollEndDrag={[Function]}
+  refreshControl={
+    <RefreshControlMock
+      onRefresh={[Function]}
+      refreshing={false}
+    />
+  }
+  refreshing={false}
+  removeClippedSubviews={false}
+  renderItem={[Function]}
+  scrollEventThrottle={50}
+  somethingRandom="test"
+  stickyHeaderIndices={Array []}
+  updateCellsBatchingPeriod={50}
+  viewabilityConfigCallbackPairs={Array []}
+  windowSize={21}
+>
+  <RCTRefreshControl />
+  <View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            undefined,
+          ]
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+        />
+      </View>
+    </View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    />
+  </View>
+</RCTScrollView>
+`;
