@@ -19,6 +19,7 @@ class InfiniteFlatList extends React.Component {
       keyExtractor,
       removeClippedSubviews,
       onEndReachedThreshold,
+      onListRef,
       ...props
     } = this.props;
 
@@ -39,6 +40,7 @@ class InfiniteFlatList extends React.Component {
                 removeClippedSubviews={removeClippedSubviews}
                 ListEmptyComponent={<ListEmpty text={emptyListText} />}
                 ListFooterComponent={<ListFooter loading={loading} />}
+                ref={onListRef}
                 {...props}
       />
     );
@@ -85,7 +87,11 @@ InfiniteFlatList.propTypes = {
   /**
    * removeClippedSubviews - default: false
    */
-  removeClippedSubviews: PropTypes.bool
+  removeClippedSubviews: PropTypes.bool,
+  /**
+   * onListRef: default: () => null
+   */
+  onListRef: PropTypes.func,
 };
 
 InfiniteFlatList.defaultProps = {
@@ -98,7 +104,8 @@ InfiniteFlatList.defaultProps = {
   onEndReachedThreshold: 0.75,
   onRefresh: () => {},
   keyExtractor: resource => resource.id,
-  removeClippedSubviews: false
+  removeClippedSubviews: false,
+  onListRef: () => null,
 };
 
 export default InfiniteFlatList;
